@@ -1,13 +1,10 @@
 <template>
   <div id="app">
     <h1>vue-event-calendar</h1>
-    <h2 class="t-center">Default template</h2>
-    <vue-event-calendar :events="demoEvents"></vue-event-calendar>
     <h2 class="t-center">Custom template</h2>
     <vue-event-calendar :events="demoEvents">
       <template scope="props">
         <div v-for="(event, index) in props.showEvents" class="event-item">
-          <!-- In here do whatever you want, make you owner event template -->
           {{event}}
         </div>
       </template>
@@ -21,11 +18,15 @@ export default {
   data () {
     return {
       demoEvents: [{
-        date: '2016/12/15',
+        date: '2017/05/29',
         title: 'eat',
         desc: 'longlonglong description'
       },{
-        date: '2017/02/12',
+        date: '2017/05/12',
+        title: 'this is a title'
+      },
+      {
+        date: '2017/05/30',
         title: 'this is a title'
       }]
     }

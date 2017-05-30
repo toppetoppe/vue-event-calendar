@@ -7,7 +7,7 @@ function install (Vue, options = {}) {
   const inBrowser = typeof window !== 'undefined'
   let dateObj = new Date()
   const DEFAULT_OPTION = {
-    locale: 'zh', //en
+    locale: 'sv', //en
     color: ' #f29543'
   }
   let Calendar = {
@@ -64,7 +64,7 @@ function install (Vue, options = {}) {
           curYear: dateObj.getFullYear(),
           curMonth: dateObj.getMonth(),
           curDate: dateObj.getDate(),
-          curEventsDate: 'all'
+          curEventsDate: ''
         }
       }
     }

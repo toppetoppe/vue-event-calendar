@@ -75,7 +75,11 @@ export default {
     }
   },
   created () {
+    console.log(this.calendarParams.curEventsDate);
+    let dateObj = new Date()
+    let today = `${dateObj.getFullYear()}/${dateObj.getMonth()+1}/${dateObj.getDate()}`
     if (this.calendarParams.curEventsDate !== 'all') {
+      if(this.calendarParams.curEventsDate == '') this.calendarParams.curEventsDate = today;
       this.handleChangeCurDay(this.calendarParams.curEventsDate)
     }
   },
@@ -102,7 +106,7 @@ export default {
     },
     events () {
       this.selectdDayEvents = {
-        date: 'all',
+        date: '',
         events: this.events || []
       }
     }
@@ -247,6 +251,9 @@ export default {
           }
           &.today{
             color: @white;
+            .is-event {
+
+            }
           }
           .is-today{
             content: '';
